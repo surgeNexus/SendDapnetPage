@@ -2,6 +2,7 @@
 'use strict';
 
 const
+    config  = require('config'),
     dapnet  = require('./services/dapnet-call'),
     args    = require('minimist')(process.argv.slice(2));
 
@@ -10,12 +11,15 @@ if (args.h || !args.c || !args.m || !args.t) {
     console.log("For help on TX groups, see https://hampager.de/#/transmitters/groups");
 } else if (config.get('user.api_user') === 'CHANGEME') {
     console.error("It seems you have to edit config/default.js. Set your call, api_user and api_pass.");
+    process.exit(1);
 } else {
     dapnet.send([args.c],args.m,[args.t])
     .then(() => {
         console.log("Message(s) sent");
+        process.exit(0);
     })
     .catch((err) => {
-        console.log("Oups, there was at least one error",err);
+        console.error("Oups, there was at least one error",err);
+        process.exit(1);
     });
 }
