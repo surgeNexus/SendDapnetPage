@@ -15,6 +15,7 @@ Great! Head to hampager.de, get an account and start paging again. There is plen
 * Make sure you have nodejs installed
 * Get a copy by `git clone git@github.com:eljudni/dapnet-example`
 * Change into the created directory
+* Install libraries with `npm install`
 * Edit `config/default.js` and change your call, api login name and api password
 * On Linux, `chmod +x send.js`. Then you may run `./send.js <options>`
 * On Mac/Windows, sorry, no idea what you have to do to make it executable. As long as `node` is in your $PATH, just run `node send.js <options>`
