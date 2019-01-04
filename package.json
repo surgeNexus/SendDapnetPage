@@ -13,6 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "https://github.com/eljudni/dapnet-example",
   "author": "do5ema <peter@kornherr.net>",
-  "license": "ISC"
+  "license": "GPL-3.0"
 }
