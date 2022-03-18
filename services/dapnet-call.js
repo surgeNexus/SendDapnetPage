@@ -5,8 +5,9 @@ const
     request = require('request'),
     _ = require('underscore');
 
-function send(destination,message,tx) {
+function send(destination,message,tx,emg) {
     return new Promise((resolve,reject) => {
+        console.log(emg);
         if (!message)
             reject("no message given");
         if (!destination || !destination[0])
@@ -17,14 +18,13 @@ function send(destination,message,tx) {
             message = message.substring(0,config.get('dapnet.max_message_size'));
         if (!tx)
             tx = config.get('dapnet.default_tx');
-
         let called = _.map(destination,(call) => {
             return new Promise((res2,rej2) => {
                 let payload = {
                     text: config.get('user.own_call') + ": " + message,
                     callSignNames: [call],
                     transmitterGroupNames: tx,
-                    emergency: false
+                    emergency: emg
                 }
                 request({
                     url: config.get('dapnet.api_url'),

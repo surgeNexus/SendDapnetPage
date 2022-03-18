@@ -10,7 +10,9 @@ module.exports = {
         // set to "false" to get an error instead.
         shorten_messages: true,
         // please be careful about that and use the smallest tx group possible!
-        default_tx: ['dl-all']
+        default_tx: ['us-all'],
+        // Emergency
+        default_emg: "No"
     },
     user: {
         // obviously, you have to change all this
