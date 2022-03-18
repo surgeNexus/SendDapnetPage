@@ -23,7 +23,7 @@ Great! Head to hampager.de, get an account and start paging again. There is plen
 * Edit `config/default.js` and change your call, api login name and api password
 * Require `send.js` as follows `const sendMessage = require('Path/to/project/root')`
 * Call function: 
-      sendMessage(["Recipients", "Here"], "Add your message here", "Transmitter-group", Emergency);
+      `sendMessage(["Recipients", "Here"], "Add your message here", "Transmitter-group", Emergency)`
                                                                                         If set true, will send as emergency. If no value, will not.
 
 Thanks again to @eljudni for all of the hard work. 
